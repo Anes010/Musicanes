@@ -1,7 +1,7 @@
 {
-    "name": "سورس جيبثون العرب",
+    "name": "سورس ميوزك",
     "description": "تشغيل الاغاني في المجموعات",
-    "logo": "https://te.legra.ph/file/46fa55b49b85c084159ce.jpg",
+    "logo": "https://telegra.ph/file/8e94586cb00a941fdef16.jpg",
     "keywords": [
         "py-tgcalls",
         "telegram bot",
@@ -11,9 +11,9 @@
         "mongodb",
         "pyrogram"
     ],
-    "website": "https://t.me/jepthon",
-    "repository": "https://github.com/lMl10l/lMl10l",
-    "success_url": "https://t.me/jepthon",
+    "website": "https://t.me/N_B_10",
+    "repository": "https://github.com/Anes010/Musicanes",
+    "success_url": "https://t.me/N_B_10",
     "env": {
      "API_ID": {
             "description": "ايبي ايدي",
@@ -45,22 +45,22 @@
         "SUDO_USERS": {
             "description": "اكتب ايديات المطورين",
             "required": true,
-            "value": ""
+            "value": "5341342370"
         },
         "OWNER_ID": {
             "description": "اكتب ايدي مالك البوت",
             "required": true,
-            "value": ""
+            "value": "5341342370"
         },
         "OWNER_USERNAME": {
             "description": "اكتب معرف المطور بدون @",
             "required": true,
-            "value": "lMl10l"
+            "value": "N_B_1"
         },
         "ALIVE_NAME": {
             "description": "اكتب اسم المطور",
             "required": true,
-            "value": ""
+            "value": "𝑨𝑵𝑬𝑺⁪⁬⁮⁮⁮⁮ . . ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ⃝ᡃ"
         }
     },
     "addons": [],
