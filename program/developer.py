@@ -190,7 +190,7 @@ async def shellrunner(client, message):
         await edit_or_reply(message, text="`OUTPUT:`\n\n`no output`")
 
 
-@Client.on_message(command(["/بوت غادر", f"leavebot{bname}"]) & ~filters.edited)
+@Client.on_message(command(["/بوت_غادر", f"leavebot{bname}"]) & ~filters.edited)
 @bot_creator
 async def bot_leave_group(_, message):
     if len(message.command) != 2:
