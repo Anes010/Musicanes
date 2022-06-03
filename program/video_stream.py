@@ -205,7 +205,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         )
 
 
-@Client.on_message(command(["فيديو", f"فيد"]) & other_filters)
+@Client.on_message(command(["/فيديو", f"/فيد"]) & other_filters)
 @check_blacklist()
 @require_admin(permissions=["can_manage_voice_chats", "can_delete_messages", "can_invite_users"], self=True)
 async def video_stream(c: Client, m: Message):
