@@ -61,7 +61,7 @@ async def update_admin(client, message: Message):
 
 
 @Client.on_message(
-    command(["/كافي", f"اوكف/", "ك", f"/ايقاف/", "انهاء"])
+    command(["/اسكت", f"/كافي", f"اوكف/", "ك", f"/ايقاف/", "انهاء"])
     & other_filters
 )
 @authorized_users_only
@@ -73,12 +73,12 @@ async def stop(client, m: Message):
             await calls.leave_group_call(chat_id)
             await remove_active_chat(chat_id)
             clear_queue(chat_id)
-            await m.reply_text(" 🦴 اެبشࢪ يحݪۅ تَم ۅكَفت اެݪاغِنية بَعد ؟..")
+            await m.reply_text(" 🦴 صار وكفت الاغنيه تع اخذلك راشدي بعد؟..")
         except Exception as e:
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("لضوج ، ماެفي شي مشتغݪ ياެعيني🌵.")
+        await m.reply_text("جاي تشوف ماكو شي مشتغل شهالازعاجات هذي.")
 
 
 @Client.on_message(
@@ -101,7 +101,7 @@ async def pause(client, m: Message):
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("لضوج حبيبي ، ماެفي شي مشتغݪ ياެعيني🌵.")
+        await m.reply_text("جاي تشوف ماكو شي مشتغل شهالازعاجات هذي.")
 
 
 @Client.on_message(
@@ -124,7 +124,7 @@ async def resume(client, m: Message):
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("لضوج ، ماެفي شي مشتغݪ ياެعيني🌵.")
+        await m.reply_text("جاي تشوف ماكو شي مشتغل شهالازعاجات هذي.")
 
 
 @Client.on_message(command(["/تخطي"]) & other_filters)
