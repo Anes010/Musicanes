@@ -80,7 +80,7 @@ async def leave_chat(c :Client, m: Message):
         return await c.send_message(chat_id, "🦴 غادر منزمان لتلح")
 
 
-@Client.on_message(command(["leaveall", f"leaveall@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["/غادر_كل_الكروبات", f"leaveall@{BOT_USERNAME}"]) & ~filters.edited)
 @bot_creator
 async def leave_all(c: Client, message: Message):
     if message.from_user.id not in SUDO_USERS:
@@ -151,7 +151,7 @@ async def stop_group_call(c: Client, m: Message):
                 call=group_call
             )
         )
-        await msg.edit_text("🦴 تَم اެݪانِهاء اެبشࢪ ")
+        await msg.edit_text("🦴 راسك مربع و تنطي اوامر😕تمام سديته")
     except Exception as e:
         if "GROUPCALL_FORBIDDEN" in str(e):
             await msg.edit_text(
