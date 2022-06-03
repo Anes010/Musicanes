@@ -38,7 +38,7 @@ from driver.database.dbqueue import get_active_chats
 from config import BOT_USERNAME as uname
 
 
-@Client.on_message(command(["broadcast", f"broadcast@{uname}"]) & ~filters.edited)
+@Client.on_message(command(["/اذاعه", f"broadcast@{uname}"]) & ~filters.edited)
 @bot_creator
 async def broadcast_message_nopin(c: Client, message: Message):
     if not message.reply_to_message:
@@ -58,11 +58,11 @@ async def broadcast_message_nopin(c: Client, message: Message):
                 sent += 1
             except Exception:
                 pass
-        await message.reply_text(f"✅ Broadcast complete in {sent} Group.")
+        await message.reply_text(f"✅ الاذاعه تمت في {sent} كروب.")
         return
     if len(message.command) < 2:
         await message.reply_text(
-            "**usage**:\n\n/broadcast (`message`) or (`reply to message`)"
+            "**usage**:\n\n/الاذاعه (`رساله`) او (`قم بالرد على الرساله`)"
         )
         return
     text = message.text.split(None, 1)[1]
@@ -78,10 +78,10 @@ async def broadcast_message_nopin(c: Client, message: Message):
             sent += 1
         except Exception:
             pass
-    await message.reply_text(f"✅ Broadcast complete in {sent} Group.")
+    await message.reply_text(f"✅ الاذاعه تمت في {sent} كروب.")
 
 
-@Client.on_message(command(["broadcast_pin", f"broadcast_pin@{uname}"]) & ~filters.edited)
+@Client.on_message(command(["/الاذاعه_تثبيت", f"broadcast_pin@{uname}"]) & ~filters.edited)
 @bot_creator
 async def broadcast_message_pin(c: Client, message: Message):
     if not message.reply_to_message:
@@ -166,7 +166,7 @@ async def bot_statistic(c: Client, message: Message):
     await msg.edit(tgm, disable_web_page_preview=True)
 
 
-@Client.on_message(command(["calls", f"calls@{uname}"]) & ~filters.edited)
+@Client.on_message(command(["/الاتصالات", f"calls@{uname}"]) & ~filters.edited)
 @sudo_users_only
 async def active_group_calls(c: Client, message: Message):
     served_chats = []
@@ -175,7 +175,7 @@ async def active_group_calls(c: Client, message: Message):
         for chat in chats:
             served_chats.append(int(chat["chat_id"]))
     except Exception as e:
-        await message.reply_text(f"🚫 error: `{e}`")
+        await message.reply_text(f"🚫 خطأ: `{e}`")
     text = ""
     j = 0
     for x in served_chats:
@@ -192,9 +192,9 @@ async def active_group_calls(c: Client, message: Message):
             text += f"**{j + 1}.** {title} [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("❌ no active group calls")
+        await message.reply_text("❌ لا يوجد")
     else:
         await message.reply_text(
-            f"✏️ **Running Group Call List:**\n\n{text}\n❖ This is the list of all current active group call in my database.",
+            f"✏️ **كروبات التي شغل فيها الاتصال:**\n\n{text}\n❖ This is the list of all current active group call in my database.",
             disable_web_page_preview=True,
         )
