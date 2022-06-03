@@ -4,7 +4,7 @@
 
 
 
-## TEST / [![TELEGRAM BOT] (https://t.me/Musicanes_bot) 
+[![TELEGRAM BOT] (https://t.me/Musicanes_bot) 
 
 
 
