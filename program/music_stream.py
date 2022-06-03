@@ -182,7 +182,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         )
 
 
-@Client.on_message(command(["شغل", f"ت"]) & other_filters)
+@Client.on_message(command(["/شغل", f"/تشغيل"]) & other_filters)
 @check_blacklist()
 @require_admin(permissions=["can_manage_voice_chats", "can_delete_messages", "can_invite_users"], self=True)
 async def audio_stream(c: Client, m: Message):
@@ -199,7 +199,7 @@ async def audio_stream(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "banned":
             try:
-                await m.reply_text("المساعد محظور ، ارفع الحظر عنة واكتب .تحديث وبعدين اكتب انضم حتى تكدر تشغل 🤍")
+                await m.reply_text("المساعد محظور ، ارفع الحظر عنة واكتب .تحديث وبعدين اكتب /انضم حتى تكدر تشغل 🤍")
                 await remove_active_chat(chat_id)
             except BaseException:
                 pass
