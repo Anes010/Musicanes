@@ -39,7 +39,7 @@ from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant, ChatAdmi
 
 
 @Client.on_message(
-    command(["انضم", f"ادخل"]) & other_filters
+    command(["/انضم", f"/ادخل"]) & other_filters
 )
 @check_blacklist()
 @authorized_users_only
@@ -62,7 +62,7 @@ async def join_chat(c: Client, m: Message):
 
 
 @Client.on_message(
-    command(["غادر", f"اطلع"]) & other_filters
+    command(["/غادر", f"/اطلع"]) & other_filters
 )
 @check_blacklist()
 @authorized_users_only
@@ -108,7 +108,7 @@ async def leave_all(c: Client, message: Message):
     )
 
 
-@Client.on_message(command(["اصعد", f"افتح"]) & other_filters)
+@Client.on_message(command(["/اصعد", f"/افتح"]) & other_filters)
 @check_blacklist()
 @authorized_users_only
 async def start_group_call(c: Client, m: Message):
@@ -128,11 +128,11 @@ async def start_group_call(c: Client, m: Message):
         await msg.edit_text("🦴 تَم فَتحت مَكَاެݪمَة صَعدۅ !")
     except ChatAdminRequired:
         await msg.edit_text(
-            "كمشرف في المجموعة مع صلاحية لاستخدام هذه الامر ، عليك رفع حساب المساعد :\n\n-›  ❤️‍🔥 الدردشة الصوتية"
+            "دارفع حساب المساعد مشرف ابن السطل تا افتحلك الاتصال فنح :\n\n-›  ❤️‍🔥 الدردشة الصوتية"
         )
 
 
-@Client.on_message(command(["انزل", f"سدها"]) & other_filters)
+@Client.on_message(command(["/انزل", f"/سده"]) & other_filters)
 @check_blacklist()
 @authorized_users_only
 async def stop_group_call(c: Client, m: Message):
@@ -155,7 +155,7 @@ async def stop_group_call(c: Client, m: Message):
     except Exception as e:
         if "GROUPCALL_FORBIDDEN" in str(e):
             await msg.edit_text(
-                "كمشرف في المجموعة مع صلاحية لاستخدام هذه الامر ، عليك رفع حساب المساعد :\n\n-›  ❤️‍🔥 الدردشة الصوتية"
+                "دارفع حساب المساعد مشرف ابن الخوش ادمي تا اسدلك الاتصال:\n\n-›  ❤️‍🔥 الدردشة الصوتية"
             )
 
 
