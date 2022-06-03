@@ -190,7 +190,7 @@ async def shellrunner(client, message):
         await edit_or_reply(message, text="`OUTPUT:`\n\n`no output`")
 
 
-@Client.on_message(command(["leavebot", f"leavebot{bname}"]) & ~filters.edited)
+@Client.on_message(command(["/بوت غادر", f"leavebot{bname}"]) & ~filters.edited)
 @bot_creator
 async def bot_leave_group(_, message):
     if len(message.command) != 2:
@@ -207,6 +207,6 @@ async def bot_leave_group(_, message):
         await user.leave_chat(chat)
         await remove_served_chat(chat)
     except Exception as e:
-        await message.reply_text(f"❌ procces failed\n\nreason: `{e}`")
+        await message.reply_text(f"❌ بروكسي فشل\n\نسب: `{e}`")
         return
-    await message.reply_text(f"✅ Bot successfully left from the Group:\n\n💭 » `{chat}`")
+    await message.reply_text(f"✅ تم مغادره الكروب بنجاح امرك مطوري:\n\n💭 » `{chat}`")
