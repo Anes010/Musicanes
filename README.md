@@ -1,11 +1,13 @@
 ### A N E S / TEL : @N_B_1
 
 
-### Owner Of This Repository //مظور السورس
+
+
+### Owner Of This Repository //مطور السورس
 
 27
 
-[![Aditya Halder](https://telegra.ph/file/30c291bae8a73cf534d4a.jpg)](https://t.me/N_B_1)
+[![Aditya Halder](https://telegra.ph/file/8e94586cb00a941fdef16.jpg)](https://t.me/N_B_1)
 
 
 
