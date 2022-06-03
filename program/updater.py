@@ -54,7 +54,7 @@ def updater():
     return bool(changelog)
 
 
-@Client.on_message(command(["/تحديث", f"update@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command([".تحديث", f"update@{BOT_USERNAME}"]) & ~filters.edited)
 @bot_creator
 async def update_bot(_, message: Message):
     chat_id = message.chat.id
@@ -68,11 +68,11 @@ async def update_bot(_, message: Message):
     await msg.edit(f"❖ bot is **up-to-date** with [main]({UPSTREAM_REPO}/tree/main) ❖", disable_web_page_preview=True)
 
 
-@Client.on_message(command(["/اعاده تشغيل", f"restart@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command([".اعاده تشغيل", f"restart@{BOT_USERNAME}"]) & ~filters.edited)
 @bot_creator
 async def restart_bot(_, message: Message):
     try:
-        msg = await message.reply_text("❖ Restarting bot...")
+        msg = await message.reply_text("❖ جاري اعاده تشغيل البوت...")
         LOGS.info("[INFO]: BOT SERVER RESTARTED !!")
     except BaseException as err:
         LOGS.info(f"[ERROR]: {err}")
