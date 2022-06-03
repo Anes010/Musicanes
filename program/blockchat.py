@@ -31,7 +31,7 @@ from driver.database.dblockchat import (
 )
 
 
-@Client.on_message(command(["/block", f"block@{BOT_USERNAME}", "blacklist"]) & ~filters.edited)
+@Client.on_message(command(["/حظر", f"block@{BOT_USERNAME}", "blacklist"]) & ~filters.edited)
 @sudo_users_only
 async def blacklist_chat_func(_, message: Message):
     if len(message.command) != 2:
@@ -40,16 +40,16 @@ async def blacklist_chat_func(_, message: Message):
         )
     chat_id = int(message.text.strip().split()[1])
     if chat_id in await blacklisted_chats():
-        return await message.reply_text("This chat already blacklisted.")
+        return await message.reply_text("هذه الدردشه بالفعل محضوره من قبل.")
     blacklisted = await blacklist_chat(chat_id)
     if blacklisted:
         return await message.reply_text(
-            "✅ This chat has blacklisted!"
+            "✅ تم الحظر بنجاح!"
         )
-    await message.reply_text("❗️ something wrong happened, check logs!")
+    await message.reply_text("❗️ شيئ ما قد حصل, افحص السجلات!")
 
 
-@Client.on_message(command(["/unblock", f"unblock@{BOT_USERNAME}", "whitelist"]) & ~filters.edited)
+@Client.on_message(command(["/الغاء_حظر", f"unblock@{BOT_USERNAME}", "whitelist"]) & ~filters.edited)
 @sudo_users_only
 async def whitelist_chat_func(_, message: Message):
     if len(message.command) != 2:
@@ -58,16 +58,16 @@ async def whitelist_chat_func(_, message: Message):
         )
     chat_id = int(message.text.strip().split()[1])
     if chat_id not in await blacklisted_chats():
-        return await message.reply_text("This chat already whitelisted.")
+        return await message.reply_text("هذه الدردشه بالفعل محضوره من قبل.")
     whitelisted = await whitelist_chat(chat_id)
     if whitelisted:
         return await message.reply_text(
             "✅ This chat has whitelisted!"
         )
-    await message.reply_text("❗️ something wrong happened, check logs!")
+    await message.reply_text("❗️ شيئ ما قد حصل, افحص السجلات!")
 
 
-@Client.on_message(command(["blocklist", f"blocklist@{BOT_USERNAME}", "blacklisted"]) & ~filters.edited)
+@Client.on_message(command(["قائمة_الحظر", f"blocklist@{BOT_USERNAME}", "blacklisted"]) & ~filters.edited)
 @sudo_users_only
 async def blacklisted_chats_func(_, message: Message):
     text = "📵 » Blocked Chat list:\n\n"
@@ -80,6 +80,6 @@ async def blacklisted_chats_func(_, message: Message):
         j = 1
         text += f"**{count}. {title}** [`{chat_id}`]\n"
     if j == 0:
-        await message.reply_text("❌ no blacklisted chat.")
+        await message.reply_text("❌ قائمه الحظر فارغه.")
     else:
         await message.reply_text(text)
