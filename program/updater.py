@@ -54,21 +54,21 @@ def updater():
     return bool(changelog)
 
 
-@Client.on_message(command(["تحديث", f"update@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["/تحديث", f"update@{BOT_USERNAME}"]) & ~filters.edited)
 @bot_creator
 async def update_bot(_, message: Message):
     chat_id = message.chat.id
-    msg = await message.reply("❖ Checking updates...")
+    msg = await message.reply("❖ جاري فحص التحديثات...")
     update_avail = updater()
     if update_avail:
-        await msg.edit("✅ Update finished !\n\n• Bot restarting, back active again in 1 minutes.")
+        await msg.edit("✅ تم انتهاء التحديث !\n\n• سيعود البوت شغالا بعد 1 دقيقه.")
         system("git pull -f && pip3 install --no-cache-dir -r requirements.txt")
         execle(sys.executable, sys.executable, "main.py", environ)
         return
     await msg.edit(f"❖ bot is **up-to-date** with [main]({UPSTREAM_REPO}/tree/main) ❖", disable_web_page_preview=True)
 
 
-@Client.on_message(command(["اعادة تشغيل", f"restart@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["/اعاده تشغيل", f"restart@{BOT_USERNAME}"]) & ~filters.edited)
 @bot_creator
 async def restart_bot(_, message: Message):
     try:
@@ -77,5 +77,5 @@ async def restart_bot(_, message: Message):
     except BaseException as err:
         LOGS.info(f"[ERROR]: {err}")
         return
-    await msg.edit_text("✅ Bot has restarted !\n\n» back active again in 5-10 seconds.")
+    await msg.edit_text("✅ جاري اعاده تشغيل البوت !\n\n» سيعود شغالا بعد 5-10 ثانيه.")
     os.system(f"kill -9 {os.getpid()} && python3 main.py")
