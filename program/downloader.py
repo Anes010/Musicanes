@@ -35,7 +35,7 @@ ydl_opts = {
 }
 
 
-@Client.on_message(command(["/بحث", f"ب"]) & ~filters.edited)
+@Client.on_message(command(["/بحث", f"/ب"]) & ~filters.edited)
 def song(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("❤️‍🔥 جَاެࢪي اެݪبَحثَ...")
