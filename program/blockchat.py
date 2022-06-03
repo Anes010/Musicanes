@@ -67,7 +67,7 @@ async def whitelist_chat_func(_, message: Message):
     await message.reply_text("❗️ شيئ ما قد حصل, افحص السجلات!")
 
 
-@Client.on_message(command(["قائمة_الحظر", f"blocklist@{BOT_USERNAME}", "blacklisted"]) & ~filters.edited)
+@Client.on_message(command(["قائمة الحظر", f"blocklist@{BOT_USERNAME}", "blacklisted"]) & ~filters.edited)
 @sudo_users_only
 async def blacklisted_chats_func(_, message: Message):
     text = "📵 » Blocked Chat list:\n\n"
