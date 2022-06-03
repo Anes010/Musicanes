@@ -106,7 +106,7 @@ async def start_(c: Client, message: Message):
 
 
 @Client.on_message(
-    command(["الاوامر", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+    command(["الاوامر", "/الاوامر", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 @check_blacklist()
 async def alive(c: Client, message: Message):
@@ -121,10 +121,10 @@ async def alive(c: Client, message: Message):
             ]
         ]
     )
-    text = f"**- تابع الاوامر في الاسفل ↓ **"
+    text = f"**- تابع الاوامر في الاسفل قناه البوت @N_B_10 ↓ **"
     await c.send_photo(
         chat_id,
-        photo=f"https://telegra.ph/file/8e94586cb00a941fdef16.jpg",
+        photo=f"https://telegra.ph/file/559adf28dcee3f1d5d383.mp4",
         caption=text,
         reply_markup=buttons,
     )
