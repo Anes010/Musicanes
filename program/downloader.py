@@ -35,7 +35,7 @@ ydl_opts = {
 }
 
 
-@Client.on_message(command(["بحث", f"ب"]) & ~filters.edited)
+@Client.on_message(command(["/بحث", f"ب"]) & ~filters.edited)
 def song(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("❤️‍🔥 جَاެࢪي اެݪبَحثَ...")
@@ -76,7 +76,7 @@ def song(_, message):
         )
         m.delete()
     except Exception as e:
-        m.edit("ℹ️ البوت لايعمل من فضلك إبلغ المطور بشأني @lMl10l")
+        m.edit("ℹ️ البوت لايعمل من فضلك إبلغ المطور بشأني @N_B_1")
         print(e)
 
     try:
@@ -87,7 +87,7 @@ def song(_, message):
 
 
 @Client.on_message(
-    command(["ابحثلي", f"vsong@{bn}", "video", f"video@{bn}"]) & ~filters.edited
+    command(["/ابحثلي", f"vsong@{bn}", "video", f"video@{bn}"]) & ~filters.edited
 )
 async def vsong(client, message):
     ydl_opts = {
