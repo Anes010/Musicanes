@@ -36,7 +36,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 
-@Client.on_message(command(["sysinfo", f"sysinfo@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["معلومات البوت", f"sysinfo@{BOT_USERNAME}"]) & ~filters.edited)
 @sudo_users_only
 async def fetch_system_information(client, message):
     splatform = platform.system()
