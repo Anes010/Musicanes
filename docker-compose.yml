@@ -25,3 +25,4 @@ services:
       IMG_4: $IMG_4
       IMG_5: $IMG_5
       ALIVE_IMG: $ALIVE_IMG
+      BOT_TOKEN: $BOT_TOKEN
